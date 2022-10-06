@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+//요청은 controller가 받는다
 @Controller //동료 선언
 public class FirstController {
 
@@ -12,5 +13,11 @@ public class FirstController {
     public String nice(Model model){
         model.addAttribute("username","yuchan");
         return "greeting"; //templates 안에 greetings 파일을 찾아서 -> 브라우저로 전송
+    }
+
+    @GetMapping("/bye")
+    public String goodBye(Model model){
+        model.addAttribute("nickname","오유찬");
+        return "goodbye";
     }
 }
