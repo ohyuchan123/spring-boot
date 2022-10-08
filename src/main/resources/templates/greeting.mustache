@@ -1,12 +1,7 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{username}}의 Study spring boot</h1>
-</body>
-</html>
+{{>layouts/header}}  <!--레이아웃 템플릿 삽입-->
+<!-- content -->
+<div class="bg-dark text-white p-5">
+    <!--위에 bg-dark(배경을 검은색으로) text-white(글자색을 흭색으로) p-5(다섯칸 크기를 띄움)-->
+    <h1>{{username}}님, 반갑습니다!</h1>
+</div>
+{{>layouts/footer}}
