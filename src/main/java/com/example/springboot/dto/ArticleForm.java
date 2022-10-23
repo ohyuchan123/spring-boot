@@ -1,5 +1,7 @@
 package com.example.springboot.dto;
 
+import com.example.springboot.entity.Article;
+
 public class ArticleForm {
     private String title;
     private String content;
@@ -20,5 +22,9 @@ public class ArticleForm {
                 "titile='" + title + '\'' +
                 ", content='" + content + '\'' +
                 '}';
+    }
+
+    public Article toEntity() {
+        return new Article(null,title,content);
     }
 }
