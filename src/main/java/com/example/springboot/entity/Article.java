@@ -1,6 +1,7 @@
 package com.example.springboot.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 
 @Entity //DB가 해당 객체를 인식가능
 @AllArgsConstructor //모든 파라미터를 자동적으로 만들어줌
+@NoArgsConstructor   // 디폴트 생성자 추가
 @ToString
 public class Article {
 
