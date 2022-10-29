@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 @Slf4j // 로깅을 위한 롬복 어노테이션
 public class ArticleController {
@@ -61,4 +63,16 @@ public class ArticleController {
         return "articles/show";
     }
 
+
+    @GetMapping("/articles")//브라워저 요청
+    public String index(Model model){
+        // 1: 모든 Article을 가져온다!
+        List<Article> articleEntityList = articleRepository.findAll();
+
+        // 2: 가져온 Article 묶음을 뷰로 전달!
+        model.addAttribute("articleList", articleEntityList);
+
+        // 3: 뷰 페이지를 설정!
+        return "articles/index";
+    }
 }
