@@ -30,18 +30,20 @@ public class ArticleController {
     //화면에서 던진 데이터를 ArticleForm이라는 파라미터에 넣어줌
     public String createArticle(ArticleForm form){
 //        System.out.println(form.toString());
-        log.info(toString()); //println을 로깅으로 대체
+        log.info(form.toString()); //println을 로깅으로 대체
         // 1. Dto를 변환 : Entity!
         Article article = form.toEntity();
 //        System.out.println(article.toString());
-        log.info(toString()); //println을 로깅으로 대체
+        log.info(article.toString()); //println을 로깅으로 대체
 
 
         // 2. Repository에게 Entity를 DB안에 저장
         Article saved = articleRepository.save(article);
 //        System.out.println(saved.toString());
-        log.info(toString()); //println을 로깅으로 대체
-        return "";
+        log.info(saved.toString()); //println을 로깅으로 대체
+
+        // 리다이렉트 적용: 생성 후, 브라우저가 해당 URL로 재요청
+        return "redirect:/articles/" + saved.getId();
         /*
             처음에는 dto에 정보가 들어갔고
             dto에 들어가 있던 정보가 Entity로 변하였다

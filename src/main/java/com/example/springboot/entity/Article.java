@@ -1,6 +1,7 @@
 package com.example.springboot.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -13,6 +14,12 @@ import javax.persistence.Id;
 @AllArgsConstructor //모든 파라미터를 자동적으로 만들어줌
 @NoArgsConstructor   // 디폴트 생성자 추가
 @ToString
+@Getter
+/*
+* Getter/Setter를 사용하는 이유
+*   - 객체의 무결성을 보장하기 위해 사용합니다
+*   (여기서 무결성이란 데이터의 정확성과 일관성을 유지하고 보증하는 것을 말합니다._
+* */
 public class Article {
 
     @Id //대표값을 지정! Like a 주민등록번호
